@@ -2,7 +2,7 @@ const author = document.querySelector("#author")
 const calculation = document.querySelector("#calculation")
 const btn_toggle = document.querySelector("#toggle");
 const length = document.getElementById('length')
-const color = document.querySelector('#color')
+const color = document.getElementById('color')
 
 // define more constants and variables here
 
@@ -29,7 +29,21 @@ const reset_btn = document.getElementById('reset')
 search_btn.onclick = () => {
   let word_length = length.value
 
-  
+  let replacer = ''
+  let i = 0
+  let letter_count = 0
+  while(context.innerHTML[i] != ' '){
+    if (context.innerHTML && word_length < letter_count){
+      replacer += context.innerHTML[i]
+      letter_count++
+    }else{
+      replacer += context.innerHTML[i]
+    }
+
+  }
+
+  context.innerHTML.replace(replacer,"<span style: color.value;>" + replacer + "</span>")
+
 }
 
 
