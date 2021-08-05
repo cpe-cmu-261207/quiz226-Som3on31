@@ -13,7 +13,7 @@ btn_toggle.onclick = () => {
   if (clickcount % 2 === 0) {
     author.innerHTML = '630610767 Saharit Kadkasem'
     btn_toggle.innerHTML = 'Show Calculation'
-  } else { 
+  } else {
     author.innerHTML = ((630610767 * -1) - length.value) * -1
     btn_toggle.innerHTML = 'Show Author'
   }
@@ -30,19 +30,23 @@ search_btn.onclick = () => {
   let word_length = length.value
 
   let replacer = ''
-  let i = 0
   let letter_count = 0
-  while(context.innerHTML[i] != ' '){
-    if (context.innerHTML && word_length < letter_count){
-      replacer += context.innerHTML[i]
-      letter_count++
+
+  for (var i = 0; i < WordCount.length; i++){
+    if (str[i] === " " || letter_count > word_length) {
+      
+      break
+    }else if(str[i] !== " " || letter_count < word_length){
+
     }else{
-      replacer += context.innerHTML[i]
+      break
     }
-
   }
+    
+  
 
-  context.innerHTML.replace(replacer,"<span style: color.value;>" + replacer + "</span>")
+
+  context.innerHTML.replace(replacer, "<span style: " + color.value + ";>" + replacer + "</span>")
 
 }
 
